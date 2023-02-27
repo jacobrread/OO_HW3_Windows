@@ -57,11 +57,11 @@
             this.drawingPanel.Name = "drawingPanel";
             this.drawingPanel.Size = new System.Drawing.Size(1624, 1292);
             this.drawingPanel.TabIndex = 1;
-            this.drawingPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawingPanel_MouseUp);
+            this.drawingPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DrawingPanel_MouseUp);
             // 
             // refreshTimer
             // 
-            this.refreshTimer.Tick += new System.EventHandler(this.refreshTimer_Tick);
+            this.refreshTimer.Tick += new System.EventHandler(this.RefreshTimer_Tick);
             // 
             // fileToolStrip
             // 
@@ -92,7 +92,7 @@
             this.newButton.Name = "newButton";
             this.newButton.Size = new System.Drawing.Size(61, 61);
             this.newButton.Text = "New";
-            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            this.newButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
             // openButton
             // 
@@ -103,7 +103,7 @@
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(61, 61);
             this.openButton.Text = "Open Drawing";
-            this.openButton.Click += new System.EventHandler(this.openButton_Click);
+            this.openButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // saveButton
             // 
@@ -114,7 +114,7 @@
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(61, 61);
             this.saveButton.Text = "Save Drawing";
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // deleteButton
             // 
@@ -124,7 +124,7 @@
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(36, 120);
             this.deleteButton.Text = "Delete";
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // drawingToolStrip
             // 
@@ -155,7 +155,7 @@
             this.pointerButton.Name = "pointerButton";
             this.pointerButton.Size = new System.Drawing.Size(61, 50);
             this.pointerButton.Text = "pointerButton";
-            this.pointerButton.Click += new System.EventHandler(this.pointerButton_Click);
+            this.pointerButton.Click += new System.EventHandler(this.PointerButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -175,8 +175,8 @@
             this.scale.Name = "scale";
             this.scale.Size = new System.Drawing.Size(136, 39);
             this.scale.Text = "1";
-            this.scale.Leave += new System.EventHandler(this.scale_Leave);
-            this.scale.TextChanged += new System.EventHandler(this.scale_TextChanged);
+            this.scale.Leave += new System.EventHandler(this.Scale_Leave);
+            this.scale.TextChanged += new System.EventHandler(this.Scale_TextChanged);
             // 
             // toolStripSeparator1
             // 
@@ -192,7 +192,7 @@
             this.undoButton.Size = new System.Drawing.Size(36, 120);
             this.undoButton.Text = "undoButton";
             this.undoButton.ToolTipText = "Undo";
-            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            this.undoButton.Click += new System.EventHandler(this.UndoButton_Click);
             // 
             // redoButton
             // 
@@ -202,7 +202,7 @@
             this.redoButton.Name = "redoButton";
             this.redoButton.Size = new System.Drawing.Size(36, 120);
             this.redoButton.Text = "Redo";
-            this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
+            this.redoButton.Click += new System.EventHandler(this.RedoButton_Click);
             // 
             // MainForm
             // 

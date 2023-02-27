@@ -7,7 +7,7 @@ namespace AppLayer.Command
     public class LoadCommand : Command
     {
         private readonly string _filename;
-        private List<CorvettePlacement> _previousTreePlacements;
+        private List<CorvettePlacement> _previousCorvettePlacements;
 
         internal LoadCommand() { }
         internal LoadCommand(params object[] commandParameters)
@@ -21,7 +21,7 @@ namespace AppLayer.Command
             if (string.IsNullOrWhiteSpace(_filename) || TargetDrawing==null)
                 return false;
 
-            _previousTreePlacements = TargetDrawing.GetCorvettePlacements();
+            _previousCorvettePlacements = TargetDrawing.GetCorvettePlacements();
 
             var reader = new StreamReader(_filename);
             TargetDrawing.LoadFromStream(reader.BaseStream);
@@ -38,9 +38,9 @@ namespace AppLayer.Command
 
             TargetDrawing.Clear();
 
-            if (_previousTreePlacements == null || _previousTreePlacements.Count == 0) return;
+            if (_previousCorvettePlacements == null || _previousCorvettePlacements.Count == 0) return;
 
-            foreach (var placement in _previousTreePlacements)
+            foreach (var placement in _previousCorvettePlacements)
                 TargetDrawing.Add(placement);
         }
 

@@ -11,7 +11,7 @@ namespace AppLayer.Command
     public class CommandFactory
     {
         public Drawing TargetDrawing { get; set; }
-        public CorvetteFactory TreeFactory { get; set; }
+        public CorvetteFactory CorvetteFactory { get; set; }
         public Invoker Invoker { get; set; }
 
         /// <summary>
@@ -30,13 +30,13 @@ namespace AppLayer.Command
         /// <param name="commandParameters">An array of optional parametesr whose sementics depedent on the command type
         ///     For new, no additional parameters needed
         ///     For add, 
-        ///         [0]: Type       reference type for assembly containing the tree type resource
-        ///         [1]: string     tree type -- a fully qualified resource name
-        ///         [2]: Point      center location for the tree, defaut = top left corner
+        ///         [0]: Type       reference type for assembly containing the corvette type resource
+        ///         [1]: string     corvette type -- a fully qualified resource name
+        ///         [2]: Point      center location for the corvette, defaut = top left corner
         ///         [3]: float      scale factor</param>
         ///     For remove, no additional parameters needed
         ///     For select,
-        ///         [0]: Point      Location at which a tree could be selected
+        ///         [0]: Point      Location at which a corvette could be selected
         ///     For deselect, no additional parameters needed
         ///     For load,
         ///         [0]: string     filename of file to load from  

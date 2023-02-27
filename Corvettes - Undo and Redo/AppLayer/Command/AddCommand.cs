@@ -1,6 +1,6 @@
-﻿using System;
+﻿using AppLayer.DrawingComponents;
+using System;
 using System.Drawing;
-using AppLayer.DrawingComponents;
 
 namespace AppLayer.Command
 {
@@ -9,7 +9,7 @@ namespace AppLayer.Command
         private const int NormalWidth = 80;
         private const int NormalHeight = 80;
 
-        private readonly string _treeType;
+        private readonly string _corvetteType;
         private Point _location;
         private readonly float _scale;
         private CorvettePlacement _placementAdded;
@@ -21,13 +21,13 @@ namespace AppLayer.Command
         /// 
         /// </summary>
         /// <param name="commandParameters">An array of parameters, where
-        ///     [1]: string     tree type
-        ///     [2]: Point      center location for the tree, defaut = top left corner
+        ///     [1]: string     corvette type
+        ///     [2]: Point      center location for the corvette, defaut = top left corner
         ///     [3]: float      scale factor</param>
         internal AddCommand(params object[] commandParameters)
         {
             if (commandParameters.Length>0)
-                _treeType = commandParameters[0] as string;
+                _corvetteType = commandParameters[0] as string;
 
             if (commandParameters.Length > 1)
                 _location = (Point) commandParameters[1];
@@ -42,9 +42,9 @@ namespace AppLayer.Command
 
         public override bool Execute()
         {
-            if (string.IsNullOrWhiteSpace(_treeType) || TargetDrawing==null) return false;
+            if (string.IsNullOrWhiteSpace(_corvetteType) || TargetDrawing==null) return false;
 
-            var treeSize = new Size()
+            var corvetteSize = new Size()
             {
                 Width = Convert.ToInt16(Math.Round(NormalWidth * _scale, 0)),
                 Height = Convert.ToInt16(Math.Round(NormalHeight * _scale, 0))
@@ -52,14 +52,14 @@ namespace AppLayer.Command
 
             var extrinsicState = new CorvetteExtrinsicState()
             {
-                CorvetteType = _treeType,
-                Location = new Point(_location.X - treeSize.Width / 2, _location.Y - treeSize.Height / 2),
-                Size = treeSize
+                CorvetteType = _corvetteType,
+                Location = new Point(_location.X - corvetteSize.Width / 2, _location.Y - corvetteSize.Height / 2),
+                Size = corvetteSize
             };
-            var tree = TargetDrawing.CorvetteFactory.CreateCorvette(_treeType);
-            if (tree == null) return false;
+            var corvette = TargetDrawing.CorvetteFactory.CreateCorvette(_corvetteType);
+            if (corvette == null) return false;
 
-            _placementAdded = new CorvettePlacement(tree, extrinsicState);
+            _placementAdded = new CorvettePlacement(corvette, extrinsicState);
             TargetDrawing.Add(_placementAdded);
 
             return true;
