@@ -5,7 +5,7 @@
         public static string Name { get; } = "C6 Coupe 2";
 
         public override string CorvetteName => Name;
-        public override string ResourceName => "c6.png";
 
+        public override string ResourceName => "c6.png";
     }
 }

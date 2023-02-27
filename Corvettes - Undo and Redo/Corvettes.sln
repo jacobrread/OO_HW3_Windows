@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corvettes", "Forests\Corvettes.csproj", "{BFB39AE5-8714-49FE-866F-85EBA9C17987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corvettes", "Corvettes\Corvettes.csproj", "{BFB39AE5-8714-49FE-866F-85EBA9C17987}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLayer", "AppLayer\AppLayer.csproj", "{78CB0893-0D76-432E-9750-E15176EA7F91}"
 EndProject
