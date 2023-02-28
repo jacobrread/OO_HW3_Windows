@@ -53,6 +53,7 @@
     <Compile Include="Command\RedoCommand.cs" />
     <Compile Include="Command\RemoveSelectedCommand.cs" />
     <Compile Include="Command\SaveCommand.cs" />
+    <Compile Include="Command\ScreenshotCommand.cs" />
     <Compile Include="Command\SelectCommand.cs" />
     <Compile Include="Command\UndoCommand.cs" />
     <Compile Include="DrawingComponents\C8_Convertible.cs" />

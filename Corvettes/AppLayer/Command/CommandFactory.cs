@@ -73,6 +73,9 @@ namespace AppLayer.Command
                 case "SAVE":
                     command = new SaveCommand(commandParameters);
                     break;
+                case "SCREENSHOT":
+                    command = new ScreenshotCommand(commandParameters);
+                    break;
             }
 
             if (command == null) return;

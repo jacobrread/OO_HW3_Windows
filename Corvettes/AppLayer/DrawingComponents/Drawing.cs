@@ -78,6 +78,16 @@ namespace AppLayer.DrawingComponents
             JsonSerializer.WriteObject(stream, extrinsicStates);
         }
 
+        internal void SaveScreanshotStream(Stream stream)
+        {
+            var extrinsicStates = new List<CorvetteExtrinsicState>();
+            lock (_myLock)
+            {
+                extrinsicStates.AddRange(_corvettePlacements.Select(corvette => corvette.ExtrinsicState));
+            }
+            Image.FromStream(stream, extrinsicStates);
+        }
+
         internal void Add(CorvettePlacement corvettePlacement)
         {
             if (corvettePlacement == null) return;

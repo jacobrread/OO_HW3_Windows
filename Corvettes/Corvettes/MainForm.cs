@@ -28,7 +28,7 @@ namespace Forests
         private Bitmap _imageBuffer;
         private Graphics _imageBufferGraphics;
         private Graphics _panelGraphics;
-       
+
         public MainForm()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace Forests
                     CheckOnClick = true,
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
                     Image = corvette.ToolImage,
-                    Name = $"{corvette.CorvetteName.Replace(" ","")}Button",
+                    Name = $"{corvette.CorvetteName.Replace(" ", "")}Button",
                     Size = new Size(61, 61),
                     Text = corvette.CorvetteName
                 };
@@ -104,7 +104,7 @@ namespace Forests
             foreach (ToolStripItem item in drawingToolStrip.Items)
             {
                 var toolButton = item as ToolStripButton;
-                if (toolButton != null && item!=ignoreItem && toolButton.Checked )
+                if (toolButton != null && item != ignoreItem && toolButton.Checked)
                     toolButton.Checked = false;
             }
         }
@@ -114,7 +114,7 @@ namespace Forests
             var button = sender as ToolStripButton;
             ClearOtherSelectedTools(button);
 
-            if (button!=null && button.Checked)
+            if (button != null && button.Checked)
             {
                 _mode = PossibleModes.Selection;
                 _currentCorvetteResource = string.Empty;
@@ -239,6 +239,21 @@ namespace Forests
         private void RedoButton_Click(object sender, EventArgs e)
         {
             _invoker.Redo();
+        }
+
+        private void ScreenshotButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new SaveFileDialog
+            {
+                DefaultExt = "jpg",
+                RestoreDirectory = true,
+                Filter = "JPG(*.JPG)|*.jpg"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                _commandFactory.CreateAndDo("screenshot", dialog.FileName);
+            }
         }
     }
 }

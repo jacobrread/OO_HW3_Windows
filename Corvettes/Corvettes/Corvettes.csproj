@@ -101,6 +101,7 @@
 		<EmbeddedResource Include="Graphics\c8_convertible.png" />
 		<EmbeddedResource Include="Graphics\redoIcon.png" />
 		<EmbeddedResource Include="Graphics\undoIcon.png" />
+		<EmbeddedResource Include="Graphics\img.png" />
 	</ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
