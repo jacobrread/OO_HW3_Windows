@@ -85,7 +85,7 @@ namespace AppLayer.DrawingComponents
             {
                 extrinsicStates.AddRange(_corvettePlacements.Select(corvette => corvette.ExtrinsicState));
             }
-            Image.FromStream(stream, extrinsicStates);
+            Image.FromStream(stream);
         }
 
         internal void Add(CorvettePlacement corvettePlacement)
